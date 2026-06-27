@@ -1,10 +1,282 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
-    <title>245286651</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Info · Jian Wu</title>
+  <meta name="description" content="Jian Wu — 湖北省石首市，个人联系信息。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --text-primary: #0c2340;
+      --text-secondary: #4a6a8a;
+      --text-muted: #7a9ab8;
+      --bg-page: #f0f5fb;
+      --bg-surface: #e1ecf7;
+      --border: rgba(24,80,150,0.10);
+      --border-mid: rgba(24,80,150,0.18);
+      --accent: #185096;
+      --radius-md: 10px;
+      --radius-lg: 14px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', 'Noto Sans SC', 'PingFang SC', 'Helvetica Neue', sans-serif;
+      background: var(--bg-page);
+      color: var(--text-primary);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0 24px;
+    }
+
+    .page {
+      width: 100%;
+      max-width: 680px;
+      padding: 40px 0 60px;
+    }
+
+    /* ── Top bar ── */
+    .top-bar {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      padding-bottom: 24px;
+      border-bottom: 0.5px solid var(--border-mid);
+      margin-bottom: 52px;
+    }
+    .logo-text {
+      font-size: 22px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      line-height: 1;
+      color: #185096;
+    }
+    .logo-sub {
+      font-size: 10px;
+      color: var(--text-secondary);
+      letter-spacing: 0.18em;
+      margin-top: 5px;
+      font-weight: 400;
+    }
+    .status-pill {
+      font-size: 11px;
+      color: var(--text-secondary);
+      border: 0.5px solid var(--border-mid);
+      padding: 5px 13px;
+      border-radius: 20px;
+      letter-spacing: 0.04em;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      margin-top: 3px;
+    }
+    .dot {
+      width: 6px; height: 6px;
+      background: #2a7de1;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* ── Hero ── */
+    .hero { margin-bottom: 56px; }
+    .hero-tag {
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .hero-title {
+      font-size: 30px;
+      font-weight: 500;
+      line-height: 1.25;
+      letter-spacing: 0.01em;
+      margin-bottom: 16px;
+    }
+    .hero-desc {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.85;
+      max-width: 420px;
+    }
+
+    /* ── Divider ── */
+    .divider {
+      height: 0.5px;
+      background: var(--border-mid);
+      margin: 44px 0;
+    }
+
+    /* ── Section label ── */
+    .section-label {
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    /* ── Contact grid ── */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    .contact-item {
+      background: var(--bg-surface);
+      border-radius: var(--radius-lg);
+      padding: 18px 20px;
+    }
+    .contact-item.full { grid-column: 1 / -1; }
+
+    .contact-label {
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .contact-value {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-primary);
+      line-height: 1.5;
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+    }
+    .contact-value svg {
+      flex-shrink: 0;
+      margin-top: 2px;
+      color: var(--text-secondary);
+    }
+    .contact-value a {
+      color: #185096;
+      text-decoration: none;
+    }
+    .contact-value a:hover { text-decoration: underline; color: #0c2340; }
+
+    .addr-en {
+      font-size: 12px;
+      font-weight: 400;
+      color: var(--text-secondary);
+      margin-top: 4px;
+      line-height: 1.6;
+    }
+
+    /* ── Footer ── */
+    .footer {
+      margin-top: 52px;
+      padding-top: 22px;
+      border-top: 0.5px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .footer-copy {
+      font-size: 11px;
+      color: var(--text-muted);
+      letter-spacing: 0.04em;
+    }
+    .footer-badge {
+      font-size: 10px;
+      color: var(--text-muted);
+      border: 0.5px solid var(--border-mid);
+      padding: 4px 11px;
+      border-radius: 10px;
+      letter-spacing: 0.06em;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 480px) {
+      .contact-grid { grid-template-columns: 1fr; }
+      .contact-item.full { grid-column: auto; }
+      .hero-title { font-size: 24px; }
+    }
+  </style>
 </head>
 <body>
-    <h1>Welcome to 245286651</h1>
-    <p>This is the official website of 245286651.</p>
+  <main class="page">
+
+    <!-- Top bar -->
+    <header class="top-bar">
+      <div>
+        <div class="logo-text">Jian Wu</div>
+        <div class="logo-sub">吴 建 · INFO</div>
+      </div>
+      <div class="status-pill">
+        <span class="dot"></span>湖北 · China
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero" aria-label="个人简介">
+      <p class="hero-tag">Hubei · China</p>
+      <h1 class="hero-title">Jian Wu<br><span style="font-size:22px; letter-spacing:0.12em">吴 建</span></h1>
+      <p class="hero-desc">个人联系页面。如需联络，欢迎通过以下方式与我取得联系。</p>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Contact -->
+    <section aria-label="联系信息">
+      <p class="section-label">联系信息 · Contact</p>
+      <div class="contact-grid">
+
+        <div class="contact-item">
+          <p class="contact-label">姓名 · Name</p>
+          <div class="contact-value">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+            <span>Jian Wu &nbsp;/&nbsp; 吴建</span>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <p class="contact-label">电话 · Phone</p>
+          <div class="contact-value">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.06 2.18 2 2 0 012.03 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            <a href="tel:+8613926240829">+86 139-2624-0829</a>
+          </div>
+        </div>
+
+        <div class="contact-item full">
+          <p class="contact-label">电邮 · Email</p>
+          <div class="contact-value">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
+            <a href="mailto:245286651@qq.com">245286651@qq.com</a>
+          </div>
+        </div>
+
+        <div class="contact-item full">
+          <p class="contact-label">地址 · Address</p>
+          <div class="contact-value">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+            <div>
+              湖北省石首市高基庙镇俞家铺村七组037号
+              <p class="addr-en">No. 037, Group 7, Yujiapucun, Gaojimiao Town,<br>Shishou City, Hubei Province, China</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p class="footer-copy">© 2026 Jian Wu · 吴建</p>
+      <div class="footer-badge">info page</div>
+    </footer>
+
+  </main>
 </body>
 </html>
